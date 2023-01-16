@@ -1,5 +1,6 @@
-import { Box, AspectRatio, Img, Text } from '@chakra-ui/react';
+import { Box, AspectRatio, Img, Text, Flex, Heading } from '@chakra-ui/react';
 import React from 'react';
+import CardComponent from '../components/CardComponent';
 import Header from '../components/Header';
 
 function Home() {
@@ -17,6 +18,16 @@ function Home() {
           />
         </AspectRatio>
       </Box>
+      <Heading
+        p={4}
+        textAlign={'center'}
+        color={'black'}
+        as={'h1'}
+        fontSize={{ base: '2xl', md: '4xl' }}
+      >
+        DESTAQUES
+      </Heading>
+      <CardComponent />
     </div>
   );
 }
