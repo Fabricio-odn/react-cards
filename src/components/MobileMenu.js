@@ -52,25 +52,25 @@ export default function MenuMobile() {
 
           <DrawerBody>
             <Stack direction={'column'} gap={1}>
-              <Link href="/">
+              <Link href="#">
                 <Text as={'b'}>ACESSÓRIOS</Text>
               </Link>
-              <Link href="/">
+              <Link href="#">
                 <Text as={'b'}>BONÉS</Text>
               </Link>
-              <Link href="/">
+              <Link href="#">
                 <Text as={'b'}>CALÇADOS</Text>
               </Link>
-              <Link href="/">
+              <Link href="#">
                 <Text as={'b'}>ROUPAS</Text>
               </Link>
-              <Link href="/">
+              <Link href="#">
                 <Text as={'b'}>SKATES</Text>
               </Link>
-              <Link href="/">
+              <Link href="#">
                 <Text as={'b'}>MARCAS</Text>
               </Link>
-              <Link href="/">
+              <Link href="#">
                 <Text as={'b'}>PROMOÇÕES</Text>
               </Link>
             </Stack>
