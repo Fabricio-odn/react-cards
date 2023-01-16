@@ -1,7 +1,17 @@
-import { Box, AspectRatio, Img, Text, Flex, Heading } from '@chakra-ui/react';
+import {
+  Box,
+  AspectRatio,
+  Img,
+  Text,
+  Flex,
+  Heading,
+  DrawerBody,
+  Wrap,
+} from '@chakra-ui/react';
 import React from 'react';
 import CardComponent from '../components/CardComponent';
 import Header from '../components/Header';
+import db from '../api/db';
 
 function Home() {
   return (
@@ -14,7 +24,7 @@ function Home() {
             alt="Homem com Skate fazendo manobra"
             objectFit={'cover'}
             filter="auto"
-            brightness="70%"
+            brightness="90%"
           />
         </AspectRatio>
       </Box>
@@ -27,7 +37,19 @@ function Home() {
       >
         DESTAQUES
       </Heading>
-      <CardComponent />
+      <Flex gap={10} wrap={'wrap'} justify={'center'} align={'center'}>
+        {db.map(db => (
+          <CardComponent
+            key={db.id}
+            imageURL={db.imageURL}
+            isNew={db.isNew}
+            name={db.name}
+            price={db.price}
+            rating={db.rating}
+            numReviews={db.numReviews}
+          />
+        ))}
+      </Flex>
     </div>
   );
 }

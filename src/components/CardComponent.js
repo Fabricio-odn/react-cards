@@ -12,16 +12,6 @@ import {
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 
-const data = {
-  isNew: true,
-  imageURL:
-    'https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=4600&q=80',
-  name: 'Wayfarer Classic',
-  price: 4.5,
-  rating: 4.2,
-  numReviews: 34,
-};
-
 function Rating({ rating, numReviews }) {
   return (
     <Box display="flex" alignItems="center">
@@ -50,9 +40,9 @@ function Rating({ rating, numReviews }) {
   );
 }
 
-function ProductAddToCart() {
+function ProductAddToCart({ ...props }) {
   return (
-    <Flex p={50} w="full" alignItems="center" justifyContent="center">
+    <Flex w={'max-content'} alignItems="center" justifyContent="center">
       <Box
         bg={useColorModeValue('white', 'gray.800')}
         maxW="sm"
@@ -60,8 +50,9 @@ function ProductAddToCart() {
         rounded="lg"
         shadow="lg"
         position="relative"
+        key={props.id}
       >
-        {data.isNew && (
+        {props.isNew && (
           <Circle
             size="10px"
             position="absolute"
@@ -72,14 +63,14 @@ function ProductAddToCart() {
         )}
 
         <Image
-          src={data.imageURL}
-          alt={`Picture of ${data.name}`}
+          src={props.imageURL}
+          alt={`Picture of ${props.name}`}
           roundedTop="lg"
         />
 
         <Box p="6">
           <Box d="flex" alignItems="baseline">
-            {data.isNew && (
+            {props.isNew && (
               <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
                 New
               </Badge>
@@ -93,7 +84,7 @@ function ProductAddToCart() {
               lineHeight="tight"
               isTruncated
             >
-              {data.name}
+              {props.name}
             </Box>
             <Tooltip
               label="Add to cart"
@@ -109,12 +100,12 @@ function ProductAddToCart() {
           </Flex>
 
           <Flex justifyContent="space-between" alignContent="center">
-            <Rating rating={data.rating} numReviews={data.numReviews} />
+            <Rating rating={props.rating} numReviews={props.numReviews} />
             <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
-              <Box as="span" color={'gray.600'} fontSize="lg">
-                £
+              <Box as="span" color={'black'} fontSize="lg">
+                R$
               </Box>
-              {data.price.toFixed(2)}
+              {props.price.toFixed(2)}
             </Box>
           </Flex>
         </Box>
