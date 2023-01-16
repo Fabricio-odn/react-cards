@@ -62,10 +62,14 @@ function Header() {
 
         <Stack>
           <InputGroup>
-            <Input placeholder="Pesquisar Item" maxW={'max-content'} />
+            <Input
+              placeholder="Pesquisar Item"
+              maxW={'max-content'}
+              color={'white'}
+            />
             <InputRightElement
               pointerEvents="none"
-              children={<RiSearchLine color="green.500" />}
+              children={<RiSearchLine color="white" />}
             />
           </InputGroup>
         </Stack>

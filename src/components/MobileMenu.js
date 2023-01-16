@@ -24,7 +24,7 @@ export default function MenuMobile() {
         <RiMenuFill
           ref={btnRef}
           onClick={onOpen}
-          size={30}
+          size={20}
           color={'#fff'}
           cursor={'pointer'}
         />
@@ -34,6 +34,7 @@ export default function MenuMobile() {
           ref={btnRef}
           onClick={onOpen}
           cursor={'pointer'}
+          fontSize={12}
         >
           MENU
         </Text>
