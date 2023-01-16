@@ -25,7 +25,13 @@ function Header() {
         gap={5}
       >
         <Hide below="md">
-          <Stack direction={'row'} gap={5} wrap={'wrap'} align={'center'}>
+          <Stack
+            direction={'row'}
+            gap={5}
+            wrap={'wrap'}
+            align={'center'}
+            color={'#fff'}
+          >
             <Link href="/">
               <Text as={'b'}>ACESSÓRIOS</Text>
             </Link>
