@@ -10,6 +10,7 @@ import {
   Stack,
   Link,
   Text,
+  Box,
 } from '@chakra-ui/react';
 import { RiMenuFill } from 'react-icons/ri';
 
@@ -19,7 +20,24 @@ export default function MenuMobile() {
 
   return (
     <div>
-      <RiMenuFill ref={btnRef} onClick={onOpen} size={30} />
+      <Box display={'flex'} alignItems={'center'} gap={2}>
+        <RiMenuFill
+          ref={btnRef}
+          onClick={onOpen}
+          size={30}
+          color={'#fff'}
+          cursor={'pointer'}
+        />
+        <Text
+          as={'b'}
+          color={'#fff'}
+          ref={btnRef}
+          onClick={onOpen}
+          cursor={'pointer'}
+        >
+          MENU
+        </Text>
+      </Box>
       <Drawer
         isOpen={isOpen}
         placement="left"
@@ -27,7 +45,7 @@ export default function MenuMobile() {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent bgColor={'black'}>
+        <DrawerContent bgColor={'black'} color={'#fff'}>
           <DrawerCloseButton />
           <DrawerHeader>Informações</DrawerHeader>
 
