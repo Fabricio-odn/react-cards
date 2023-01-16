@@ -12,6 +12,7 @@ import React from 'react';
 import CardComponent from '../components/CardComponent';
 import Header from '../components/Header';
 import db from '../api/db';
+import Footer from '../components/Footer';
 
 function Home() {
   return (
@@ -50,6 +51,7 @@ function Home() {
           />
         ))}
       </Flex>
+      <Footer />
     </div>
   );
 }
